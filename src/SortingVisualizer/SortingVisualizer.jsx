@@ -2,16 +2,17 @@ import React from 'react';
 import './SortingVisualizer.css';
 import { getMergeSortAnimations, getBubbleSortAnimations, getQuickSortAnimations, getHeapSortAnimations} from '../algorithms/algorithms.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Navbar, Nav, Container} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Button, Navbar, Nav, Container, Col} from 'react-bootstrap';
 
 
 const ANIMATION_SPEED_MS = 5;
 
 const NUMBER_OF_ARRAY_BARS = 50;
 
-const PRIMARY_COLOR = 'turquoise';
+const PRIMARY_COLOR = 'lightcoral';
 
-const SECONDARY_COLOR = 'red';
+const SECONDARY_COLOR = 'cornflowerblue';
 
 export default class SortingVisualizer extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class SortingVisualizer extends React.Component {
     resetArray() {
         const array = [];
         for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
-            var maxH = window.innerHeight*0.80;
+            var maxH = window.innerHeight*0.78;
             array.push(randomIntFromInterval(5, maxH));
         }
         this.setState({ array });
@@ -146,21 +147,21 @@ export default class SortingVisualizer extends React.Component {
         return (
             <div>
                 <Navbar bg="dark" variant="dark" expand="lg">
-                    <Navbar.Brand href="#home">Sorting Visualizer</Navbar.Brand>
+                    <Navbar.Brand href="#home" className="fontFam">Sorting Visualizer</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
                             <Nav.Link onClick={() => {this.bubbleSort()}}>
-                                <Button>Bubble Sort</Button>
+                                <Button className="fontFam">Bubble Sort</Button>
                             </Nav.Link>
                             <Nav.Link onClick={() => {this.mergeSort()}}>
-                                <Button>Merge Sort</Button>
+                                <Button className="fontFam">Merge Sort</Button>
                             </Nav.Link>
                             <Nav.Link onClick={() => { this.heapSort() }}>
-                                <Button>Heap Sort</Button>
+                                <Button className="fontFam">Heap Sort</Button>
                             </Nav.Link>
                             <Nav.Link onClick={() => { this.quickSort() }}>
-                                <Button>Quick Sort</Button>
+                                <Button className="fontFam">Quick Sort</Button>
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
@@ -179,7 +180,10 @@ export default class SortingVisualizer extends React.Component {
                         ))}
                     </div>
                 </Container>
-                <Button className="fab" variant="primary" size="lg" onClick={() => this.resetArray()}>Reset Array</Button>
+                <Button className="fab fontFam" variant="primary" size="lg" onClick={() => this.resetArray()}>Reset Array</Button>
+                <div style={{position: "absolute", bottom: "20px", width: "100%", margin:"auto"}}>
+                    <h5 style={{marginBottom: 0}}>Made with <i id="love" className="fa fa-heart"></i> by <a href="https://www.linkedin.com/in/amilaneni-abhinav">Abhinav</a></h5>
+                </div>
             </div>
         );
     }

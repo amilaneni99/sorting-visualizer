@@ -15,3 +15,16 @@
     bottom: 20px;
     right: 20px;
 }
+
+.fontfam{
+    font-family: 'Quicksand', sans-serif;
+}
+
+@keyframes heart {
+    from, to { color: black }
+    50% { color: tomato; }
+}
+
+#love{
+    animation: heart 1s step-end infinite;
+}

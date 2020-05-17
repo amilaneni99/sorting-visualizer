@@ -1,0 +1,17 @@
+.array-container {
+    transform: rotateZ(180deg) rotateY(180deg);
+    margin-top: 30px;
+}
+
+.array-bar {
+    width: 25px;
+    background-color: pink;
+    display: inline-block;
+    margin: 0 1px;
+}
+
+.fab{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

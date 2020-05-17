@@ -1,0 +1,15 @@
+{
+  "short_name": "Sorting Visualizer",
+  "name": "Simple Sorting Visualizer",
+  "icons": [
+    {
+      "src": "business.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
